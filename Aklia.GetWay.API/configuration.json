@@ -2,13 +2,18 @@
   "Routes": [
     //通用功能Swagger UI
     {
+      //服务发现配置
       "ServiceName": "Aklia.Web.API", //服务名称
-      "UseServiceDiscovery": true,
-      "DownstreamPathTemplate": "/doc/Aklia.Web.API/v1.0/swagger.json", //上游Swagger配置的模板
-      "DownstreamScheme": "http",
+      "UseServiceDiscovery": true,  //使用服务发现
       "LoadBalancer": "RoundRobin", //负载均衡  轮询模式
+
+      "DownstreamPathTemplate": "/doc/Aklia.Web.API/v1.0/swagger.json", //下游Swagger配置的模板
+      "DownstreamScheme": "http",
+
+
       "UpstreamPathTemplate": "/doc/Aklia.Web.API/v1.0/swagger.json", //下游Swagger配置的模板
       "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+
     },
     //通用功能路由转发
     {

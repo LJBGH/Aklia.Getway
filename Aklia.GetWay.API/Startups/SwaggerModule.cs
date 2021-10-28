@@ -63,13 +63,6 @@ namespace Aklia.GetWay.API.Startups
 
         public static void UseSwaggerConfig(this IApplicationBuilder app) 
         {
-            //app.UseSwagger(x =>
-            //{
-            //    //自定义Swagger路由模板
-            //    x.RouteTemplate = $"doc/" + "Aklia.GetWay.API" + "/{documentName}/swagger.json";
-            //});
-
-
 
             app.UseSwagger();
 
