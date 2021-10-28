@@ -18,10 +18,6 @@ namespace Aklia.GetWay.API
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration((host,config)=>
-                {
-                    config.AddJsonFile("configuration.json");
-                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

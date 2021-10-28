@@ -17,6 +17,7 @@ namespace Aklia.GetWay.API.Startups
         private static string _title = string.Empty;
         private static string _version = string.Empty;
         private static string _url = string.Empty;
+        private static List<string> _apiList;
 
         public static void AddSwaggerModule(this IServiceCollection services, IConfiguration configuration)
         {
@@ -24,6 +25,8 @@ namespace Aklia.GetWay.API.Startups
             _title = configuration["Aklia:Swagger:Title"];
             _version = configuration["Aklia:Swagger:Version"];
             _url = configuration["Aklia:Swagger:Url"];
+            _apiList = configuration["Aklia:Swagger:ServicesDocNames"].Split(',').ToList();
+ 
 
             services.AddSwaggerGen(c =>
             {
@@ -36,7 +39,7 @@ namespace Aklia.GetWay.API.Startups
                     {
                         Name = _title,
                         Email = "1983810978@qq.com",
-                        Url = new System.Uri("https://github.com/YANGKANG01/QuartzNetJob")
+                        Url = new System.Uri("https://github.com/LJBGH/Aklia")
                     }
                 });
 
@@ -60,16 +63,27 @@ namespace Aklia.GetWay.API.Startups
 
         public static void UseSwaggerConfig(this IApplicationBuilder app) 
         {
-            app.UseSwagger(x =>
-            {
-                //自定义Swagger路由模板
-                x.RouteTemplate = $"doc/" + "Aklia.GetWay.API" + "/{documentName}/swagger.json";
-            });
+            //app.UseSwagger(x =>
+            //{
+            //    //自定义Swagger路由模板
+            //    x.RouteTemplate = $"doc/" + "Aklia.GetWay.API" + "/{documentName}/swagger.json";
+            //});
+
+
+
+            app.UseSwagger();
 
             //启用中间件服务对swagger-ui,指定swagger json终点   SwaggerEndpoint的地址要和RouteTemplate对应
             app.UseSwaggerUI(x =>
             {
-                x.SwaggerEndpoint(_url, _title);
+
+                _apiList.ForEach(a =>
+                {
+                    var names = a.Split('-');
+                    var t = $"/doc/{names[0]}/{names[1]}/swagger.json";
+                    x.SwaggerEndpoint(t, names[0]);
+                });
+               
                 x.RoutePrefix = string.Empty; //设置根节点访问
             });
         }

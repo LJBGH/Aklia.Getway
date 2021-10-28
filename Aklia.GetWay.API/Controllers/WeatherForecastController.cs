@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Aklia.GetWay.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("getwayapi/[controller]/[action]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
