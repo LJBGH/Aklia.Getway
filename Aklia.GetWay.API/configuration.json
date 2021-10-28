@@ -1,0 +1,71 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/{controller}/{action}",
+      "DownstreamScheme": "http",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "40001"
+        },
+
+        {
+          "Host": "localhost",
+          "Port": "40002"
+        }
+      ],
+      "UpstreamPathTemplate": "/s/{controller}/{action}",
+      "UpstreamHttpMethod": [ "Get", "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/{controller}/{action}",
+      "DownstreamScheme": "http",
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "40003"
+        }
+      ],
+      "UpstreamPathTemplate": "/s3/{controller}/{action}",
+      "UpstreamHttpMethod": [ "Get", "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/{controller}/{action}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "40004"
+        }
+      ],
+      "UpstreamPathTemplate": "/s4/{controller}/{action}",
+      "UpstreamHttpMethod": [ "Get", "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/{controller}/{action}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "40005"
+        }
+      ],
+      "UpstreamPathTemplate": "/s5/{controller}/{action}",
+      "UpstreamHttpMethod": [ "Get", "Post" ]
+    }
+  ],
+
+
+  "GlobalConfiguration": {
+    "BaseUrl": "https://api.mybusiness.com"
+  }
+
+
+
+}
