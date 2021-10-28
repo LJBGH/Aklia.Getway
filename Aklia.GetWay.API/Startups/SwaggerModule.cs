@@ -79,9 +79,8 @@ namespace Aklia.GetWay.API.Startups
 
                 _apiList.ForEach(a =>
                 {
-                    var names = a.Split('-');
-                    var t = $"/doc/{names[0]}/{names[1]}/swagger.json";
-                    x.SwaggerEndpoint(t, names[0]);
+                    var doc = $"/doc/{a}/v1.0/swagger.json";
+                    x.SwaggerEndpoint(doc, a);
                 });
                
                 x.RoutePrefix = string.Empty; //设置根节点访问
