@@ -22,14 +22,14 @@
     {
       "ServiceName": "Aklia.Web.API", //服务名称
       "UseServiceDiscovery": true,
-      "DownstreamPathTemplate": "/api/{url}",
+      "DownstreamPathTemplate": "/aklia/{url}",
       "DownstreamScheme": "http",
 
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
       "ReRoutesCaseSensitive": false, // non case sensitive
-      "UpstreamPathTemplate": "/api/{url}",
+      "UpstreamPathTemplate": "/aklia/{url}",
       "UpstreamHttpMethod": [ "Get", "Post", "Delete", "Put" ],
       "ReRouteIsCaseSensitive": false,
       "QoSOptions": {
