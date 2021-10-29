@@ -1,3 +1,6 @@
 /Aklia.GetWay.API/obj
 /Aklia.GetWay.API/bin
 /Aklia.GetWay.API/.vs
+/Demo/gateway/idn.dataapigateway/IDN.DataAPIGateway/bin
+/Demo/gateway/idn.dataapigateway/IDN.DataAPIGateway/obj
+/Demo/gateway/idn_services_gateway/IDN.Services.Gateway/src/IDN.Gateway/bin
