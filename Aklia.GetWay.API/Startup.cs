@@ -60,17 +60,6 @@ namespace Aklia.GetWay.API
                 endpoints.MapControllers();
             });
 
-            //var configuration = new OcelotPipelineConfiguration
-            //{
-            //    PreQueryStringBuilderMiddleware = async (context, next) =>
-            //    {
-            //        var host = $"{context.Request.Scheme}://{context.Request.Host.Value}";
-            //        context.Request.Headers.Add("OriginalHost", host);
-            //        await next.Invoke();
-            //    }
-            //};
-            //app.UseOcelot(configuration);
-
             app.UseOcelot().Wait();
         }
     }
