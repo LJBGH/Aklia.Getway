@@ -111,8 +111,8 @@
   //服务发现配置
   "GlobalConfiguration": {
     "ServiceDiscoveryProvider": {
-      "Host": "localhost",
-      "Port": 8500,
+      "Host": "101.34.154.180",
+      "Port": 8510,
       "Type": "Consul"
     }
   }
