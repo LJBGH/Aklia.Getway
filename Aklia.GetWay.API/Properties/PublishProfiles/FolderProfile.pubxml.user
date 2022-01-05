@@ -5,6 +5,6 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\SocialMED-260\Desktop\MyStore\Publish\AkliaGetWay</_PublishTargetUrl>
-    <History>True|2021-11-01T10:10:52.1440667Z;True|2021-11-01T18:08:09.1400283+08:00;</History>
+    <History>True|2022-01-05T04:04:24.5881949Z;True|2021-11-01T18:10:52.1440667+08:00;True|2021-11-01T18:08:09.1400283+08:00;</History>
   </PropertyGroup>
 </Project>
